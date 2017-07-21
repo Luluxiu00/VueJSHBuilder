@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VueJS 入门</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<p v-if="see">现在你看到我了</p>
+			<template v-if="ok">
+				<h1>菜鸟教程</h1>
+				<p>学的不仅是技术,更是梦想!</p>
+				<p>哈哈哈,打字辛苦啊!!!</p>
+			</template>
+			<br />
+			<label for="s">see</label><input type="checkbox" v-model="see" id="s" />
+			<label for="o">ok</label><input type="checkbox" v-model="ok" id="o" />
+		</div>
+
+		<script type="text/javascript">
+			new Vue({
+				el: '#app',
+				data: {
+					see: true,
+					ok: true
+				}
+			});
+		</script>
+	</body>
+
+</html>

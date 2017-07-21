@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VueJS 入门</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="value in object">
+					{{value}}
+				</li>
+			</ul>
+			
+			<ul>
+				<li v-for="(value,key) in object">
+					{{key}} : {{value}}
+				</li>
+			</ul>
+			
+			<ul>
+				<li v-for="(value,key,index) in object">
+				{{index}}.	{{key}} : {{value}}
+				</li>
+			</ul>
+			
+			<ul>
+				<li v-for="n in 10">
+				{{n}}
+				</li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+			new Vue({
+				el: '#app',
+				data: {
+					object: {
+					name: '菜鸟教程',
+					url: 'http://www.runoob.com',
+					slogan: '学的不仅是技术，更是梦想！'
+				}
+				}
+			});
+		</script>
+	</body>
+
+</html>

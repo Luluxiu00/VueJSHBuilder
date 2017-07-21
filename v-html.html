@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>VueJS 入门</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div v-html="message"></div>
+		</div>
+		
+		<script type="text/javascript">
+			new Vue({
+				el: '#app',
+				data: {
+					message: '菜鸟教程'
+				}
+			});
+		</script>
+	</body>
+</html>

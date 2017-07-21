@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>VueJS 入门</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+		<style type="text/css">
+			.active {
+				width: 100px;
+				height: 100px;
+				background: green;
+			}	
+			.text-danger {
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div v-bind:class="objectClass">
+
+			</div>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el: '#app',
+				data: {
+					objectClass: {
+						active: true,
+						'text-danger': true
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

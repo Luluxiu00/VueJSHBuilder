@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VueJS 入门</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+	</head>
+
+	<body>
+		<div id="app" v-runoob:hello.a.b="msg">
+		</div>
+		<script type="text/javascript">
+			Vue.directive('runoob',{
+				bind: function(el,binding,vnode){
+					var s = JSON.stringify
+					el.innerHTML =
+					'name: ' + s(binding.name) + '<br />' +
+					'value: ' + s(binding.value) + '<br />' +
+					'expression: ' + s(binding.expression) + '<br />' +
+					'argument: ' + s(binding.arg) + '<br />' +
+					'modifiers: ' + s(binding.modifiers) + '<br />' +
+					'vnode keys: ' + Object.keys(vnode).join(', ')
+				}
+			})
+			
+			// 创建根实例
+			new Vue({
+				el: '#app',
+				data: {
+					msg: '菜鸟教程!'
+				}
+				});
+		</script>
+	</body>
+
+</html>

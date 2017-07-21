@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VueJS 入门</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+		<style>
+			.active {
+				width: 100px;
+				height: 100px;
+				background: green;
+			}
+			
+			.text-danger {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<!--<div v-bind:class="[aClass,bClass]"></div>-->
+
+			<div v-bind:class="[bClass ,isActive ? aClass : '']"></div>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					isActive: true,
+					aClass: 'active',
+					bClass: 'text-danger'
+				}
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VueJS 入门</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+		<style>
+			.active {
+				width: 100px;
+				height: 100px;
+				background: green;
+			}
+			
+			.text-danger {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">菜鸟教程</div>
+			<div v-bind:style="styleObject">麻将还是</div>
+			<div v-bind:style="[styleObject,overridingStyles]">上课迫切</div>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					activeColor: 'pink',
+					fontSize: 30,
+					styleObject: {
+						color: 'green',
+						fontSize: '30px'
+					},
+					overridingStyles: {
+						'font-weight': 'bold'
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

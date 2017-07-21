@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VueJS 入门</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+		<script src="https://cdn.bootcss.com/vue-router/2.2.0/vue-router.min.js"></script>
+	</head>
+
+	<body>
+		<div id="app" v-runoob="{color:'blue',text:'王者农药!'}">
+		</div>
+		<script type="text/javascript">
+			Vue.directive('runoob',{
+				bind: function(el,binding){
+					//简写方式设置文本及背景颜色
+					el.innerHTML = binding.value.text
+					el.style.backgroundColor = binding.value.color
+				}
+			})
+			
+			// 创建根实例
+			new Vue({
+				el: '#app'
+				});
+		</script>
+	</body>
+
+</html>

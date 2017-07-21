@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>VueJS 入门</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<child message="hellp!"></child>
+		</div>
+		<script type="text/javascript">
+			//注册
+			Vue.component('child',{
+				// 声明props
+				props: ['message'],
+				template: '<span>{{message}}</span>'
+			})
+			// 创建根实例
+			new Vue({
+				el: '#app'
+			});
+		</script>
+	</body>
+
+</html>
